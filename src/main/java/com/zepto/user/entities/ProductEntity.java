@@ -10,14 +10,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="products")
+@Table(name="product")
 public class ProductEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(nullable=false ,unique=true)
+	@Column(name="name",nullable=false ,unique=true)
 	private String name;
 	@Column(nullable=false )
 	private double price ;

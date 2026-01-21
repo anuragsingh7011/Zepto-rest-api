@@ -33,8 +33,15 @@ public class UserDAO {
         .uniqueResult();
 		
 		return userEntity2;
-		
-		
+	
+	}
+	
+	public UserEntity findByEmail(String email) {
+		Session session=sessionFactory.openSession();
+		UserEntity entity= session.createQuery("from UserEntity where email =: email", UserEntity.class)
+					.setParameter("email", email).uniqueResult();
+		session.close();
+		return entity;			
 	}
 	
 	

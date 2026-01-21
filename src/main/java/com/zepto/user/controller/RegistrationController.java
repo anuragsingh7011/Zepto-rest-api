@@ -17,13 +17,13 @@ public class RegistrationController {
 	UserService userService;
 	
 	@PostMapping("/register")
-	public String  doRegister(@RequestBody UserDTO userDTO) {
+	public Object doRegister(@RequestBody UserDTO userDTO) {
 		
 		System.out.println("RegistrationController.doRegister()---------register");
 		int response=userService.createUser(userDTO);
 		
 		
-		return  "User Registered Successfully  !!!!";
+		return  "User Registered Successfully  User_ID: "+ response;
 		
 	}
 	
