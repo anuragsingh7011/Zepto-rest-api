@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.zepto.user.dao.ProductDAO;
 import com.zepto.user.entities.ProductEntity;
-import com.zepto.user.entities.UserEntity;
 import com.zepto.user.model.ProductDTO;
 
 @Service

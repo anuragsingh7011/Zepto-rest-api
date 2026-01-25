@@ -5,15 +5,12 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.zepto.user.entities.UserEntity;
-
 
 @Repository
 public class UserDAO {
 	@Autowired	
 	SessionFactory sessionFactory;
-	
 	
 	public Integer saveUser(UserEntity userEntity) {
 		Session session=sessionFactory.openSession();
@@ -21,8 +18,7 @@ public class UserDAO {
 		 Integer response=(Integer) session.save(userEntity);
 		  tnx.commit();
 		  session.close();
-		  return response;
-		  
+		  return response;	  
 	}
 	
 	public UserEntity loginDAO(UserEntity userEntity) {
@@ -33,7 +29,6 @@ public class UserDAO {
         .uniqueResult();
 		
 		return userEntity2;
-	
 	}
 	
 	public UserEntity findByEmail(String email) {
@@ -43,6 +38,4 @@ public class UserDAO {
 		session.close();
 		return entity;			
 	}
-	
-	
 }
